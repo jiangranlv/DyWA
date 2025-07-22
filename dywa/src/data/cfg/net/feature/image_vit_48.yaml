@@ -1,0 +1,10 @@
+_target_: models.rl.net.vit_legacy.ViTFeatNet.Config
+# cls: 'vit'
+dim_in: [2, 48, 48]
+image:
+  _target_:  models.rl.vision_model.vision_encoder_for_ppo.Config
+  image_size: 48
+dim_out: 256
+use_pretrained: true
+freeze_vit: true
+vit_ckpt: '/tmp/pkm/phys/run-006/ckpt/epoch-0200.ckpt'

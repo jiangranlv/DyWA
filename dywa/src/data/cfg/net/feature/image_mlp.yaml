@@ -1,0 +1,6 @@
+_target_: models.rl.net.flat_mlp.FlatMLPFeatNet.Config
+dim_in: [2, 48, 48]
+dim_hidden: []
+dim_out: 128
+act_cls: 'tanh'
+use_bn: false

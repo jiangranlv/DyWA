@@ -1,0 +1,28 @@
+_target_: models.rl.net.cnn.CNNFeatNet.Config
+dim_in: [2, 48, 48]
+dim_out: 128
+blocks:
+  - _target_: models.common.ConvBlock.Config
+    add_coord: true
+    stride: 2
+    padding: 0
+    kernel_size: 2
+    channels: 16
+  - _target_: models.common.ConvBlock.Config
+    add_coord: true
+    stride: 2
+    padding: 0
+    kernel_size: 2
+    channels: 32
+  - _target_: models.common.ConvBlock.Config
+    add_coord: true
+    stride: 2
+    padding: 0
+    kernel_size: 2
+    channels: 64
+  - _target_: models.common.ConvBlock.Config
+    add_coord: true
+    stride: 2
+    padding: 0
+    kernel_size: 2
+    channels: 128

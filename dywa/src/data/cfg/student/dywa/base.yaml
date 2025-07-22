@@ -1,0 +1,60 @@
+defaults:
+  - rma_gru_student_base_v3
+
+point_tokenizer:
+  encode_patch: True
+  patch_encoder_type: pointnet
+  patch_encoder_mlps: [[32], [128]]
+  patch_nums: [64, 16]
+  K_nn: 32
+
+  # global encoder
+  pn_cfg: null
+  num_tokens: 16
+  token_pe: False
+  pos_embed_type: mlp
+
+encoder:
+  encoder_type: mlp
+  encoder_mlp: [1024, 1024]
+  res_link: True
+
+use_history: True
+history_tokenizer:
+  encoder:
+    encoder_type: Identity
+  decoder:
+    decoder_type: conv
+    num_query_tokens: 1
+    kernel_stride_list: [[17, 17], [2, 1]]
+  history_len: 5
+
+constraint:
+  loss_coef: 1
+  margin: 1
+  loss_type: contrastive
+  dim: 128
+
+decoder:
+  decoder_type: film
+  decoder_mlp: [2368] 
+  res_link: False
+  num_query_tokens: 37
+  film_pred_scale: True
+
+aggregator:
+  aggregator_type: mlp
+  aggregator_mlp: [1024, 256]
+  state_size: 256
+
+vision_pose_predictor:
+  pose_mlp_states: []
+  xyz_mlp_states: [128, 64]
+  rot_mlp_states: [128, 64]
+  rot_loss_coef: 1
+  xyz_loss_coef: 1
+
+merge_pose_pred: False
+use_amp: False
+
+learning_rate: 6e-4

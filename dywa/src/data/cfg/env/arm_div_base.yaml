@@ -1,0 +1,101 @@
+# @package _global_
+# Base configuration for
+# robot arm with diverse objects.
+use_amp: false
+add_prev_wrench: false
+add_object_embedding: false
+add_object_full_cloud: false
+use_tune_goal_radius: false
+use_tune_goal_speed: false
+use_tune_goal_angle: false
+add_object_mass: false
+use_tabulate: false
+
+env:
+  dt: 0.0125 # 1 / 80.0
+  substeps: 1
+  use_aggregate: true
+  aggregate_type: env
+  action_period: 8
+  goal_type: pose
+  which_scene: single_object
+  num_env: 1024
+
+  single_object_scene:
+    diverse_object: true
+    init_type: stable
+    goal_type: stable
+    randomize_init_pos: true
+    randomize_init_orn: true
+    randomize_yaw: true
+    use_dr_on_setup: false
+    table_dims: [0.4, 0.5, 0.4]
+    table_file: table-with-wall/table-with-wall-small.urdf
+    use_wall: false
+    table_friction: 0.5
+    object_friction: 0.5
+    load_bbox: true    
+    load_embedding: false
+    load_convex: false
+    filter_dims: [0.05, 0.2, 1.5]
+    override_cube: false
+
+  franka:
+    ctrl_mode: cpos_n
+    target_type: rel
+    max_pos: 0.06
+    max_ori: 0.1
+    KP_pos: 200.0
+    KD_pos: 17.32
+    KP_ori: 600.0
+    KD_ori: 48.98
+    clip_bound: true
+    track_object: true
+    obj_margin: 0.15
+    accumulate: false
+    lock_orn: false
+    crm_override: true
+    regularize: null
+    VISCOUS_FRICTION: 0.2
+    rot_type: axis_angle
+    init_type: home
+
+  task:
+    timeout: 128
+    use_cliff: false
+    use_keypoint: true
+    crm_override: false
+
+    # GOAL
+    check_stable: false
+    contact_thresh: 0.0
+    use_pose_goal: true
+    goal_type: stable
+    goal_angle: 0.1
+    goal_radius: 0.05
+    max_speed: 0.1
+    planar: false
+    sample_thresh: [1.0, 1.0]
+    randomize_yaw: true
+    min_separation_scale: 1.1
+    margin_scale: 0.0
+
+    # REWARD
+    use_potential: true
+    fail_coef: 0.0
+    succ_coef: 1.0
+    pot_coef: 0.16
+    hand_obj_pot_coef: 0.03
+    time_coef: 0.0
+    rel_pot_rew_scale: 0.2
+
+    epsilon: 0.02
+    regularize_coef: 0.0
+
+    # POT. REW
+    use_log_reward: false
+    use_exp_reward: true
+    k_1: 0.302
+    k_2: 243.12
+    gamma: 0.995
+env_name: 'arm_div_base'

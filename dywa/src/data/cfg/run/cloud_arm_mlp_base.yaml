@@ -1,0 +1,83 @@
+# @package _global_
+# Full state + Mass, MLP
+defaults:
+  - ../net/feature/noop@net.state.feature.state
+  - ../net/feature/cloud@net.state.feature.cloud
+  - ../net/feature/noop@net.state.feature.hand_state
+  - ../net/feature/noop@net.state.feature.object_state
+  - ../net/feature/noop@net.state.feature.previous_wrench
+  - ../net/feature/cloud@net.state.feature.goal
+  - ../net/feature/noop@net.state.feature.goal_thresh
+  - ../net/feature/noop@net.state.feature.object_mass
+  - ../net/feature/noop@net.state.feature.phys_params
+  - ../net/feature/noop@net.state.feature.object_embedding
+  - ../net/feature/noop@net.state.feature.previous_action
+  - ../net/aggregator/noop@net.state.aggregator.state
+  - ../net/aggregator/noop@net.state.aggregator.cloud
+  - ../net/aggregator/noop@net.state.aggregator.hand_state
+  - ../net/aggregator/noop@net.state.aggregator.object_state
+  - ../net/aggregator/noop@net.state.aggregator.previous_wrench
+  - ../net/aggregator/noop@net.state.aggregator.goal
+  - ../net/aggregator/noop@net.state.aggregator.goal_thresh
+  - ../net/aggregator/noop@net.state.aggregator.object_mass
+  - ../net/aggregator/noop@net.state.aggregator.phys_params
+  - ../net/aggregator/noop@net.state.aggregator.object_embedding
+  - ../net/aggregator/noop@net.state.aggregator.previous_action
+  - ../net/state/mlp@net.state.state
+
+remove_state: false
+agent:
+  train:
+    use_early_stopping: true
+    train_steps: 2000000
+    use_amp: false
+    burn_in: 0
+    loss:
+      k_val: 2.0
+      k_bound: 0.02
+      normalize_val: false
+      clip_value: false
+      max_dv: 0.2
+    alr:
+      kl_target: 0.016
+    rollout_size: 8
+    chunk_size: 1
+    epoch: 8
+  accumulate_gradient: 1
+  tanh_xfm: false
+  # This configures compute_state() to
+  # operate on each frame.
+  bptt_horizon: 1
+  bptt_burn_in: 0
+  bptt_stride: 1
+  bootstrap_timeout: true
+
+net:
+  policy:
+    actor:
+      dim_hidden: [64]
+      use_bn: false
+      use_ln: true
+      act_cls: 'elu'
+    value:
+      use_bn: false
+      use_ln: true
+      act_cls: 'elu'
+      dim_hidden: [64]
+  state:
+    fuser:
+      dim_out: 256
+      mlp:
+        dim_hidden: [512]
+        dim_out: 256
+        use_bn: false
+        use_ln: true
+        act_cls: 'elu'
+    state:
+      use_bn: false
+      use_ln: true
+      act_cls: 'elu'
+      dim_hidden: [256]
+      dim_out: 128
+
+model_name: 'cloud_arm_mlp_base'

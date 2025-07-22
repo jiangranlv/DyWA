@@ -1,0 +1,3 @@
+_target_: models.rl.net.flatten.FlattenFeatNet.Config
+dim_in: [8, 256]
+dim_out: 2048 # 8 * 256

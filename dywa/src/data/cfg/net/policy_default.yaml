@@ -1,0 +1,3 @@
+defaults:
+  - policy/mlp_actor@actor
+  - policy/mlp_value@value

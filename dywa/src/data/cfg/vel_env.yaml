@@ -1,0 +1,17 @@
+env:
+  # NOTE: only used for config resolution
+  obs_space:
+    object_state: "pose"
+    cube_state: "pose" # ?
+    image: "image"
+    goal: "point"
+
+  task:
+      max_speed: 2.0
+      check_stable: true
+      timeout: 1024
+rppov4:
+  train:
+    loss:
+      k_val: 2.0
+    mixed_reset: true

@@ -1,0 +1,45 @@
+# defaults:
+#   - ../../mae/vit/mae_ss-tiny
+_target_: models.rl.net.vit_simsiam.ViTSSFeatNet.Config
+dim_in: [1,56,56]
+dim_out: 256
+conv_blocks:
+- _target_: models.common.ConvBlock.Config
+  channels: 32
+  kernel_size: 4
+  stride: 2
+  padding: 1
+  batch_norm: false
+  add_coord: false
+  bias: true
+  act_cls: relu
+- _target_: models.common.ConvBlock.Config
+  channels: 64
+  kernel_size: 4
+  stride: 2
+  padding: 1
+  batch_norm: false
+  add_coord: false
+  bias: true
+  act_cls: relu
+encoder:
+  _target_: models.rl.net.vit_from_mae.ViTMAEConfig
+  hidden_size: 256
+  num_hidden_layers: 4
+  num_attention_heads: 8
+  intermediate_size: 256
+  hidden_act: gelu
+  hidden_dropout_prob: 0.0
+  attention_probs_dropout_prob: 0.0
+  initializer_range: 0.02
+  layer_norm_eps: 1.0e-12
+  image_size: 14
+  patch_size: 1
+  num_channels: 64
+  mask_ratio: 0.75
+  qkv_bias: true
+  encoder_stride: 4
+
+use_decoder: false
+use_reconstructor: false
+use_simsiam: false

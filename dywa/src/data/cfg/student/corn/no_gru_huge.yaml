@@ -1,0 +1,33 @@
+defaults:
+  - rma_gru_student_base_v3
+
+horizon: 1
+point_tokenizer:
+  encode_patch: True
+  patch_encoder_type: mlp
+  patch_nums: [16]
+  num_tokens: 16
+  token_pe: False
+  pos_embed_type: mlp
+
+encoder:
+  encoder_type: SelfAttn
+  self_atten:
+    num_hidden_layers: 2
+
+decoder:
+  decoder_type: CrossAttn
+  cross_atten:
+    num_hidden_layers: 1
+  num_query_tokens: 4
+  learnable_query: query
+
+
+aggregator:
+  aggregator_type: mlp
+  aggregator_mlp: [1024, 256]
+  state_size: 256
+  
+  # num_gru_layer: 2
+  
+use_amp: False

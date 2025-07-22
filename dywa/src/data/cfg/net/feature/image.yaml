@@ -1,0 +1,7 @@
+_target_: models.rl.net.vit_legacy.ViTFeatNet.Config
+# cls: 'vit'
+dim_in: [2, 96, 96]
+dim_out: 256
+use_pretrained: true
+freeze_vit: true
+vit_ckpt: '/tmp/docker/vit-ckpt/ViT-mask(clean).pt'

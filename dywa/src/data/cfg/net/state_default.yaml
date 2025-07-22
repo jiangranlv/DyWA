@@ -1,0 +1,82 @@
+defaults:
+  - feature/pose@feature.state
+  - feature/pose@feature.cube_state
+  - feature/pose@feature.object_state
+    #  - feature/image@feature.img
+  - feature/noop@feature.img
+    # - feature/image_mwm@feature.img
+    #- feature/image_mwm@feature.rgb
+  - feature/point@feature.goal
+  - feature/noop@feature.eef_state
+  - feature/noop@feature.robot_state
+  - aggregator/gru@aggregator.state
+  - aggregator/gru@aggregator.cube_state
+  - aggregator/gru@aggregator.object_state
+  - aggregator/gru@aggregator.img
+  - aggregator/noop@aggregator.goal
+  - aggregator/noop@aggregator.eef_state
+  - aggregator/noop@aggregator.robot_state
+  - state/gru@state
+  #- state/mlp@state
+  - fuser/mlp@fuser
+
+feature:
+  state:
+    dim_in: [7]
+  cube_state:
+    dim_in: [7]
+  object_state:
+    dim_in: [7]
+
+# NOTE:
+# hopefully this part is (usually?) unnecessary
+# aggregator:
+#   goal:
+#     dim_obs:
+#       - ${....feature.goal.dim_out}
+#     dim_out: ${...feature.goal.dim_out}
+#   state:
+#     dim_obs:
+#       - ${....feature.state.dim_out}
+#   cube_state:
+#     dim_obs:
+#       - ${....feature.cube_state.dim_out}
+#   object_state:
+#     dim_obs:
+#       - ${....feature.object_state.dim_out}
+
+fuser:
+  mlp:
+    act_cls: 'tanh'
+
+#    - state: feature/pose
+#    - cube_state: feature/pose
+#    - object_state: feature/pose
+#    - image: feature/image
+#    - goal: feature/point
+# - aggregator:
+#   - state: gru
+#   - cube_state: gru
+#   - object_state: gru
+#   - image: gru
+#   - goal: gru
+# - fuser: mlp
+# state: gru
+# feature:
+
+# feat_cls: 'mlp'
+# feat_agg_cls: 'gru'
+# fuser:
+#   mlp:
+#     act_cls: 'tanh'
+# default_mlp:
+#   act_cls: 'tanh'
+# state_agg_cls:
+#   'mlp'
+# mlp:
+#   state:
+#     act_cls: 'tanh'
+#   goal:
+# gru:
+#   state:
+#     act_cls: 'tanh'

@@ -1,0 +1,7 @@
+defaults:
+  - state: pose
+  - cube_state: pose
+  - object_state: pose
+  - image: image
+  - goal: point
+

@@ -1,0 +1,7 @@
+_target_: models.rl.net.sd_cross.StateDependentCrossFeatNet.Config
+dim_in: [8,256]
+dim_out: 512 # 4(num_query) * 128(emb_dim)
+query_keys: []
+num_query: 4
+ctx_dim: 0
+emb_dim: 128

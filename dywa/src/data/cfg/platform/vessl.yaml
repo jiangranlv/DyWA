@@ -1,0 +1,14 @@
+# @package _global_
+use_wandb: true
+path:
+  root: "/output"
+env:
+  single_object_scene:
+    data_root: '/input/ACRONYM/urdf'
+    hull_root: '/input/ACRONYM/hull'
+    mesh_count: '/input/ACRONYM/mesh_count.json'
+  multi_object_scene:
+    data_root: '/input/ACRONYM/urdf'
+    hull_root: '/input/ACRONYM/hull'
+    mesh_count: '/input/ACRONYM/mesh_count.json'
+machine: "vessl"

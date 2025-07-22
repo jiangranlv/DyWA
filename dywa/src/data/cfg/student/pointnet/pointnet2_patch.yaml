@@ -1,0 +1,21 @@
+set_abstraction1_cfg:
+  npoint: 512
+  radius_list: [0.1, 0.2, 0.4]
+  nsample_list: [16, 32, 128]
+  in_channel: 0
+  mlp_list: [[32, 32, 64], [64, 64, 128], [64, 96, 128]]
+set_abstraction2_cfg:
+  npoint: 128
+  radius_list: [0.2, 0.4, 0.8]
+  nsample_list: [32, 64, 128]
+  in_channel: 320
+  mlp_list: [[64, 64, 128], [128, 128, 256], [128, 128, 256]]
+set_abstraction3_cfg:
+  npoint: 16
+  radius: 0.3
+  nsample: 16
+  in_channel: 643
+  mlp: [128, 128]
+  group_all: false
+hidden_dim: [128, 128]
+output_dim: 128

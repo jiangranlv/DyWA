@@ -1,0 +1,5 @@
+_target_: models.common.ConvBlock.Config
+add_coord: true
+stride: 2
+padding: 0
+kernel_size: 2

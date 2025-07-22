@@ -1,0 +1,17 @@
+defaults:
+  - agent: rppov4
+  - net/state_default@net.state
+  - net/policy_default@net.policy
+  # Disable hydra logs
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+
+use_wandb: true
+path:
+  root: null
+  
+# Disable hydra logs
+hydra:
+  output_subdir: null
+  run:
+    dir: .

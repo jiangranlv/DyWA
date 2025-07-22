@@ -1,0 +1,14 @@
+newmtl m0
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+Ns 1.0
+d 0
+map_Ka 54d441d1ea9fb2b9.jpg
+map_Kd 54d441d1ea9fb2b9.jpg
+newmtl m1
+Ka 0.227451 0.227451 0.227451
+Kd 0.227451 0.227451 0.227451
+Ks 0.0 0.0 0.0
+Ns 1.0
+d 0

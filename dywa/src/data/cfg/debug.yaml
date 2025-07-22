@@ -1,0 +1,16 @@
+num_env: 4
+description: "test"
+rppo:
+  train:
+    mixed_reset: false
+ppo:
+  train:
+    mixed_reset: false
+rppov4:
+  train:
+    mixed_reset: false
+use_wandb: false
+use_hfhub: false
+path:
+  root:
+    null

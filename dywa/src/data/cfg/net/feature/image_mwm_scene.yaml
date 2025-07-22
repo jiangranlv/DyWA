@@ -1,0 +1,103 @@
+_target_: models.rl.net.vit_simsiam.ViTSSFeatNet.Config
+dim_in: [1,64,64]
+dim_out: 64
+conv_blocks:
+- _target_: models.common.ConvBlock.Config
+  channels: 16
+  kernel_size: 4
+  stride: 2
+  padding: 1
+  batch_norm: false
+  add_coord: true
+  bias: true
+  act_cls: relu
+- _target_: models.common.ConvBlock.Config
+  channels: 32
+  kernel_size: 4
+  stride: 2
+  padding: 1
+  batch_norm: false
+  add_coord: false
+  bias: true
+  act_cls: relu
+encoder:
+  _target_: models.rl.net.vit_from_mae.ViTMAEConfig
+  hidden_size: 64
+  num_hidden_layers: 3
+  num_attention_heads: 4
+  intermediate_size: 64
+  hidden_act: gelu
+  hidden_dropout_prob: 0.0
+  attention_probs_dropout_prob: 0.0
+  initializer_range: 0.02
+  layer_norm_eps: 1.0e-6
+  image_size: 16
+  patch_size: 2
+  num_channels: 32
+  mask_ratio: 0.75
+  qkv_bias: true
+  encoder_stride: 2
+decoder:
+  _target_: models.img.mae_layer.MaskedDecoder.Config
+  hidden_size: 64
+  num_hidden_layers: 3
+  num_attention_heads: 4
+  intermediate_size: 64
+  hidden_act: gelu
+  hidden_dropout_prob: 0.0
+  attention_probs_dropout_prob: 0.0
+  initializer_range: 0.02
+  layer_norm_eps: 1.0e-6
+  image_size: 8
+  patch_size: 1
+  num_channels: 64
+  qkv_bias: true
+  encoder_stride: 1
+  decoder_num_attention_heads: 4
+  decoder_hidden_size: 64
+  decoder_num_hidden_layers: 4
+  decoder_intermediate_size: 64
+  norm_pix_loss: false
+reconstructor:
+  _target_: models.img.reconstructor_decoder.ReconstructorDecoder.Config
+  input_shape: [64,8,8]
+  output_shape: [1,64,64]
+  conv:
+  - _target_: models.img.upconv.UpCBA2D.Config
+    conv:
+      _target_:  models.img.upconv.UpConv2D.Config
+      in_channels: 64
+      out_channels: 32
+      kernel_size: 2
+      stride: 2
+      padding: 0
+      bias: false
+    use_bn: true
+    act_cls: relu
+  - _target_: models.img.upconv.UpCBA2D.Config
+    conv:
+      _target_:  models.img.upconv.UpConv2D.Config
+      in_channels: 32
+      out_channels: 16
+      kernel_size: 2
+      stride: 2
+      padding: 0
+      bias: false
+    use_bn: true
+    act_cls: relu
+  - _target_: models.img.upconv.UpCBA2D.Config
+    conv:
+      _target_:  models.img.upconv.UpConv2D.Config
+      in_channels: 16
+      out_channels: 1
+      kernel_size: 2
+      stride: 2
+      padding: 0
+      bias: true
+    use_bn: false
+    act_cls: none
+  interpolate: false
+use_decoder: false
+use_reconstructor: false
+use_simsiam: false
+loss_coefficient: 0.0

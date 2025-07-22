@@ -1,0 +1,42 @@
+defaults:
+  - train_rl
+
+use_wandb: False
+env:
+  use_viewer: False
+  draw_task_goal: True
+  draw_obj_pos_2d: False
+  draw_force: False
+  draw_obj_vel: False
+
+  task:
+    max_speed: 0.1
+
+  num_env: 16
+  env_margin_scale: 1.0
+  env_margin: 0.0
+  single_object_scene:
+    mode: valid
+
+
+agent:
+  train:
+    train_steps: 0
+
+# use_nvdr_record_viewer: True
+# nvdr_record_viewer:
+#   record_dir: /home/user/DyWA/output/record/viewer
+use_nvdr_record_episode: True
+nvdr_record_episode:
+  record_dir: /home/user/DyWA/output/record/episode
+  use_col: False
+  img_size: [1024, 1024]
+  video_fps: 10
+# use_record_viewer: False
+# record_viewer:
+#   record_dir: /home/user/DyWA/output/record
+#   record_reward: true
+
+plot_pc: True
+plotly_pc_recorder:
+  record_dir: /home/user/DyWA/output/record/pc

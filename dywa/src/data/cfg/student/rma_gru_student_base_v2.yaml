@@ -1,0 +1,29 @@
+# @package _global_
+# Student encoder trained by RMA
+project: 'rma'
+perturb_cloud:
+  noise_mag: 0.005
+  noise_type: 'additive'
+perturb_goal:
+  noise_mag: 0.0
+student: 
+  shapes:
+    goal: 9
+    hand_state: 9
+    robot_state: 14
+    previous_action: 20
+  rnn_arch: 'deep_gru'
+  max_delay_steps: 0
+  without_teacher: false
+  use_interim_goal: True
+  horizon: 8
+  pose_dim: 9
+  state_keys: ['goal', 'hand_state', 'robot_state', 'previous_action']
+  patch_encoder_mlps: [[128]]
+  patch_nums: [16]
+train_step: 1000000
+save_step: 10000
+train_student_policy: false
+
+
+model_name: 'rma_gru_student_base_v2'

@@ -1,0 +1,24 @@
+# @package _global_
+defaults:
+  - icra_base_rma_mc
+
+state_net_blocklist: ['depth', 'label', 'partial_cloud', 'partial_cloud_1', 
+            'partial_cloud_2', 'abs_goal', 'rel_goal_gt']
+
+normalizer:
+  norm:
+    constlist: ['depth', 'label', 'hand_state', 'cloud', 'partial_cloud', 
+            'partial_cloud_1', 'partial_cloud_2', 'abs_goal', 'rel_goal_gt']
+
+use_rel_goal: False 
+add_init_cloud: False
+add_init_rel_goal: False
+use_goal_cloud: False
+goal_cloud_type: rel
+
+use_shuffle_cloud: False 
+use_partial_cloud: False
+add_gt_list: ['rel_goal'] 
+add_teacher_state: False
+
+env_name: 'rel_goal_3view'

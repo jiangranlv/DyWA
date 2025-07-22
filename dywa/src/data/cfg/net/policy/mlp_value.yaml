@@ -1,0 +1,5 @@
+dim_feat: -1
+dim_hidden: []
+act_cls: 'tanh'
+use_bn: False
+bias: True

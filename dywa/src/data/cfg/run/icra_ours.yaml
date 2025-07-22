@@ -1,0 +1,38 @@
+# @package _global_
+
+defaults:
+  - cloud_arm_mlp_base
+  - ../net/feature/noop@net.state.feature.cloud
+  - ../net/feature/noop@net.state.feature.goal
+  - ../net/feature/sd_cross@net.state.feature.icp_emb
+  - ../net/aggregator/noop@net.state.aggregator.icp_emb
+
+use_icp_obs: true
+
+icp_obs:
+  icp:
+    keys:
+      hand_state: 9
+    ckpt: 'corn/col-pre:512-32-balanced-SAM-wd-5e-05-920'
+
+net:
+  state:
+    feature:
+      icp_emb:
+        dim_in: [17, 128]  # cloud size
+        dim_out: 2096
+        cat_ctx: True
+        query_keys: ['goal', 'previous_action', 'robot_state', 'phys_params']
+        num_query: 16
+        ctx_dim: 48 # 9+20+14+5
+        emb_dim: 128
+    fuser:
+      keys: ['icp_emb']
+      mlp:
+        dim_hidden: [512]
+    state:
+      dim_hidden: []
+
+
+
+model_name: 'icra_ours'

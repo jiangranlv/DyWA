@@ -1,0 +1,4 @@
+_target_: models.rl.net.cross.CrossFeatNet.Config
+dim_in: [8,256]
+num_emb_token: 4
+dim_out: 1024 # 4 * 256

@@ -1,0 +1,9 @@
+# @package _global_
+defaults:
+  - abs_goal_1view
+
+
+use_partial_cloud: False
+
+
+env_name: 'abs_goal_3view'

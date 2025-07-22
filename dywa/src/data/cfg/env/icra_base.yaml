@@ -1,0 +1,69 @@
+# @package _global_
+
+defaults:
+  - arm_div_base
+
+env:
+  num_env: 4096
+  franka:
+    base_height: table
+    obj_margin: 0.2
+    init_type: box_sample
+    regularize: energy
+    min_hand_friction: 1.0
+    max_hand_friction: 1.5
+  single_object_scene:
+    use_wall: false
+    load_convex: false
+    override_inertia: true
+    load_cloud: true
+    filter_dims: null
+    filter_pose_count: null
+    base_set: ['dgn']
+    dgn:
+      data_path: '/input/DGN/meta-v8'
+      pose_path: '/input/DGN/meta-v8/unique_dgn_poses'
+    filter_file: '/input/DGN/yes.json'
+    num_object_types: 1024
+    use_dr_on_setup: true
+    use_scale_dr: true
+    use_dr: true
+    min_mass: 0.1
+    max_mass: 0.5
+    min_scale: 0.05
+    max_scale: 0.1
+    use_yaw_only_logic: true
+    min_table_friction: 0.3
+    max_table_friction: 0.8
+  task:
+    gamma: 0.995
+    sample_thresh: [1.0, 1.0]
+    margin_scale: 0.8
+    regularize_coef: 0.0001
+    timeout: 300
+    goal_radius: 0.05
+    goal_angle: 0.1
+  object_state_type: pose_vel
+  hand_state_type: pose6d
+  goal_type: pose
+
+add_object_full_cloud: true
+
+remove_state: true
+add_goal_thresh: false
+add_goal_full_cloud: false
+
+use_rel_goal: true
+use_6d_rel_goal: true
+add_object_mass: false
+add_phys_params: true
+
+use_tune_goal_radius: false
+use_camera: false
+normalize_img: false
+
+normalizer:
+  norm:
+    constlist: ['hand_state', 'cloud']
+
+env_name: 'icra_base'

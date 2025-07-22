@@ -1,0 +1,4 @@
+_target_: models.rl.net.no_op.NoOpAggNet.Config
+dim_obs: []
+dim_act: 0
+dim_out: 0

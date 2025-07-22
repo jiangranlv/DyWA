@@ -1,0 +1,2 @@
+_target_: models.rl.net.gru.GRUAggNet.Config
+dim_out: 64

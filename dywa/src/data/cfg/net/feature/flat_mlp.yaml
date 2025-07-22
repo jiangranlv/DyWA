@@ -1,0 +1,7 @@
+_target_: models.rl.net.flat_mlp.FlatMLPFeatNet.Config
+dim_in: [8, 256]
+dim_hidden: [512]
+dim_out: 256
+act_cls: 'elu'
+use_bn: false
+use_ln: true

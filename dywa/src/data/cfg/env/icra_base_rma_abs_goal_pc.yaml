@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - icra_base_rma_abs_rel
+
+normalizer:
+  norm:
+    constlist: ['depth', 'label', 'hand_state', 'cloud', 'partial_cloud', 
+    'partial_cloud_1', 'partial_cloud_2', 'abs_goal', 'initial_cloud', 'initial_rel_goal']
+
+state_net_blocklist: ['depth', 'label', 'partial_cloud', 'partial_cloud_1', 'partial_cloud_2', 
+                    'abs_goal', 'initial_cloud', 'initial_rel_goal', 'rel_goal_gt', 'phys_params_gt']
+
+add_init_cloud: True
+add_init_rel_goal: True
+use_goal_cloud: True
+goal_cloud_type: rel
+
+env_name: 'icra_base_rma_abs_goal_pc'

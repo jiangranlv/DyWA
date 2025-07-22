@@ -1,0 +1,9 @@
+_target_: models.rl.net.point_patch_v8.PointPatchV8FeatNet.Config
+
+dim_in: [512, 3]
+dim_out: 512
+query_keys: null
+ctx_dim: 0
+emb_dim: 128
+num_query: 4
+cat_query : False

@@ -1,0 +1,14 @@
+_target_: models.rl.net.point.PointFeatNet.Config
+dim_in: [512,3]
+dim_out: 128
+model:
+  _target_:  models.sdf.encoder.point_tokens.PointTokenizer.Config
+  use_hilbert: true
+  patch_size: 32
+  patch_feature_dim: 64
+  output_dim: 128
+  use_viewpoint: false
+  transformer_depth: 2
+  transformer_num_head: 4
+  pe_type: 'linear'
+  version: 2

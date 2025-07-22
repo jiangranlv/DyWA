@@ -1,0 +1,11 @@
+_target_: models.rl.net.vit_from_mae.ViTFeatNet.Config
+dim_in: [2, 48, 48]
+# NOTE: __ONLY__ works with dim_out==256.
+dim_out: 256
+vit:
+  _target_: models.rl.net.vit_from_mae.ViTConfig
+  image_size: 48
+freeze: true
+train_emb_token: true
+# ckpt: '/tmp/pkm/mae/run-041/ckpt/last.ckpt'
+ckpt: '/tmp/pkm/mae-pos/run-030/ckpt/last.ckpt'

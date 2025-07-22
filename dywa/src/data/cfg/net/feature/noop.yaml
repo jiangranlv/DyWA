@@ -1,0 +1,9 @@
+_target_: models.rl.net.no_op.NoOpFeatNet.Config
+dim_in: []
+dim_out: 0
+# dim_out: ${dim_obs}
+# dim_obs: []
+# dim_hidden: []
+# dim_out: 64
+# act_cls: 'tanh'
+# use_bn: false

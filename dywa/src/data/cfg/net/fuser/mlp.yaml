@@ -1,0 +1,5 @@
+_target_ : models.rl.net.mlp.MLPFuser.Config
+dim_out: 64
+mlp:
+  _target_: models.rl.net.mlp.MLPFeatNet.Config
+  act_cls: 'lrelu'

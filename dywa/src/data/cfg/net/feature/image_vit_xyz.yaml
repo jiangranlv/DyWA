@@ -1,0 +1,14 @@
+_target_: models.rl.net.vit_xyz.ViTXYZFeatNet.Config
+
+dim_in: [2, 48, 48]
+# NOTE: __ONLY__ works with dim_out==3.
+dim_out: 3
+vit:
+  _target_: models.rl.net.vit_from_mae.ViTFeatNet.Config
+  vit:
+    _target_: models.rl.net.vit_from_mae.ViTConfig
+    image_size: 48
+  freeze: true
+  train_emb_token: false
+# ckpt: '/tmp/pkm/mae/run-041/ckpt/last.ckpt'
+ckpt: '/tmp/docker/vit-xyz.ckpt'

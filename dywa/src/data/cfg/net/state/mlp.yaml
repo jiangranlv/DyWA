@@ -1,0 +1,7 @@
+_target_: models.rl.net.mlp.MLPAggNet.Config
+dim_out: 64
+dim_act: 0
+dim_hidden: [64]
+act_cls: 'tanh'
+use_bn: False
+

@@ -1,0 +1,48 @@
+# @package _global_
+
+defaults:
+  - icra_base
+env:
+  franka:
+    add_control_noise: True
+    max_pos: 0.06
+    max_ori: 0.1
+  task:
+    timeout: 300
+  seed: 56081
+camera:
+  use_cloud: true
+  cloud_type: 'object'
+  object_id: 2
+  img_size: [32, 32] # (height, width)
+  fov: 0.3 # radians(58 * 64 / 480)
+  # img_size: [480,848] # (height, width)
+  # img_size: [240,424] # (height, width)
+  eye: [0.458, -0.40, 0.740]
+  at: [ 0.0, 0.0, 0.55 ]
+  up: [0.0, 0.0, 1.0]
+  # D435 z_near = 0.195
+  z_near: 0.01
+  aspect: 1.0
+  track_object: true
+  
+is_phase2: true
+phase2:
+  start_dof_pos_offset: 0.03
+  adaptive_residual_scale: false
+use_camera: true
+normalize_img: false
+multiple_cameras: true
+state_net_blocklist: ['depth', 'label', 'partial_cloud', 'partial_cloud_1', 'partial_cloud_2']
+normalizer:
+  norm:
+    constlist: ['depth', 'label', 'hand_state', 'cloud', 'partial_cloud', 'partial_cloud_1', 'partial_cloud_2']
+
+use_partial_cloud: false
+
+tag: dagger
+dagger: True
+dagger_train_env:
+  deterministic_action: false
+
+env_name: 'icra_base_rma_mc'

@@ -1,0 +1,8 @@
+train:
+  train_steps: 500000
+  rollout_size: 32
+  chunk_size: 1
+  use_early_stopping: true
+  use_amp: False
+  loss:
+    k_bound: 0.002

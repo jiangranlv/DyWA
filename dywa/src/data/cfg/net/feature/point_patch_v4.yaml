@@ -1,0 +1,48 @@
+_target_: models.rl.net.point_patch_v4.PointPatchV4FeatNet.Config
+
+dim_in: [512, 3]
+dim_out: 256
+knn: 8
+hidden: 128
+patch_size: 32
+token_size: 128
+pos_embed_type: 'mlp'
+group_type: 'fps'
+patch_type: 'mlp'
+pw_attn:
+  _target_: models.rl.net.pw_attn.PatchWiseAttentionFeatNet.Config
+  dim_in: [16, 128] # dim_in[0]/patch_size, token_size
+  dim_out: 128
+  keys: []
+  num_query: 4
+  ctx_dim: 48
+  emb_dim: 128
+  encoder:
+    _target_: models.cloud.point_mae.PointMAEEncoder.Config
+    layer:
+      _target_: models.cloud.point_mae.PointMAELayer.Config
+      attention:
+        _target_: models.cloud.point_mae.PointMAEAttention.Config
+        self_attn:
+          _target_: models.cloud.point_mae.PointMAESelfAttention.Config
+          hidden_size: 128
+          num_attention_heads: 4
+          qkv_bias: true
+          attention_probs_dropout_prob: 0.0
+        output:
+          _target_: models.cloud.point_mae.PointMAESelfOutput.Config
+          hidden_size: 128
+          hidden_dropout_prob: 0.0
+      intermediate:
+        _target_: models.cloud.point_mae.PointMAEIntermediate.Config
+        hidden_size: 128
+        intermediate_size: 128
+        hidden_act: gelu
+      output:
+        _target_: models.cloud.point_mae.PointMAEOutput.Config
+        intermediate_size: 128
+        hidden_size: 128
+        hidden_dropout_prob: 0.0
+      hidden_size: 128
+      layer_norm_eps: 1.0e-06
+    num_hidden_layers: 4

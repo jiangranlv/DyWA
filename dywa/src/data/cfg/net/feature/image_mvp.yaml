@@ -1,0 +1,4 @@
+_target_: models.rl.net.pretrained_mvp.MvpFeatNet.Config
+dim_in: [2, 224, 224]
+dim_out: 384
+freeze: true

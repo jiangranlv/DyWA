@@ -1,0 +1,4 @@
+_target_: models.rl.net.no_op.NoOpFeatNet.Config
+# cls: 'noop'
+dim_in: [3]
+dim_out: 3

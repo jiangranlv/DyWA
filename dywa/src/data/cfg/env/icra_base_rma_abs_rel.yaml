@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - icra_base_rma_mc
+
+state_net_blocklist: ['depth', 'label', 'partial_cloud', 'partial_cloud_1', 'partial_cloud_2', 'abs_goal']
+
+normalizer:
+  norm:
+    constlist: ['depth', 'label', 'hand_state', 'cloud', 'partial_cloud', 'partial_cloud_1', 'partial_cloud_2', 'abs_goal']
+env_name: 'icra_base_rma_abs_rel'

@@ -1,0 +1,18 @@
+[build-system]
+requires = [
+    "setuptools >= 48",
+    "setuptools_scm >= 6.2",
+    "wheel >= 0.29.0",
+    "cmake",
+    "cmake_build_extension",
+    "pybind11",
+    "torch"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_scheme = "no-guess-dev"
+local_scheme = "no-local-version"
+#write_to = "src/pkm/_version.py"
+root = "../"
+relative_to = "setup.py"
