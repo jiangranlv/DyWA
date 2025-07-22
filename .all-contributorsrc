@@ -16,6 +16,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "jiangranlv",
+      "name": "Jiangran Lyu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66426987?v=4",
+      "profile": "http://jiangranlv.github.io",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
