@@ -163,6 +163,13 @@ If you find this work useful, please cite:
 }
 ```
 
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## Acknowledgement
 This work is built upon and further extended from the prior work [**CORN: Contact-based Object Representation for Nonprehensile Manipulation of General Unseen Objects**](https://sites.google.com/view/contact-non-prehensile). We sincerely thank the authors of CORN for their valuable contribution and for making their work publicly available.
 
