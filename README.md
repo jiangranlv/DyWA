@@ -150,7 +150,7 @@ Instead, adjust the number of parallel environment by changing `++env.num_env=${
 For detailed setup or troubleshooting, please refer to [README](./dywa/exp/train/README.md).
 
 
-# Citation
+## Citation
 
 If you find this work useful, please cite:
 
@@ -163,5 +163,14 @@ If you find this work useful, please cite:
 }
 ```
 
-# Acknowledgement
+## Acknowledgement
 This work is built upon and further extended from the prior work [**CORN: Contact-based Object Representation for Nonprehensile Manipulation of General Unseen Objects**](https://sites.google.com/view/contact-non-prehensile). We sincerely thank the authors of CORN for their valuable contribution and for making their work publicly available.
+
+## License
+
+ This work and the dataset are licensed under [CC BY-NC 4.0][cc-by-nc].
+
+ [![CC BY-NC 4.0][cc-by-nc-image]][cc-by-nc]
+
+ [cc-by-nc]: https://creativecommons.org/licenses/by-nc/4.0/
+ [cc-by-nc-image]: https://licensebuttons.net/l/by-nc/4.0/88x31.png
