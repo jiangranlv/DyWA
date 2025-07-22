@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "SteveOUO",
+      "name": "SteveOUO",
+      "avatar_url": "https://avatars.githubusercontent.com/u/112961458?v=4",
+      "profile": "https://github.com/SteveOUO",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "DyWA",
+  "projectOwner": "jiangranlv"
+}
