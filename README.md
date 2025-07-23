@@ -162,10 +162,10 @@ For detailed setup or troubleshooting, please refer to [README](./dywa/exp/train
 If you find this work useful, please cite:
 
 ```bibtex
-@inproceedings{lyu2025dywa,
-  title={DyWA: Dynamics-adaptive World Action Model for Generalizable Non-prehensile Manipulation},
-  author={Jiangran Lyu and Ziming Li and Xuesong Shi and Chaoyi Xu and Yizhou Wang and He Wang},
-  booktitle={Proc. IEEE/CVF International Conference on Computer Vision (ICCV)},
+@article{lyu2025dywa,
+  title={Dywa: Dynamics-adaptive world action model for generalizable non-prehensile manipulation},
+  author={Lyu, Jiangran and Li, Ziming and Shi, Xuesong and Xu, Chaoyi and Wang, Yizhou and Wang, He},
+  journal={arXiv preprint arXiv:2503.16806},
   year={2025}
 }
 ```
