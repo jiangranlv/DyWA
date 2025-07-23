@@ -1,7 +1,7 @@
 <h1 align="center">🤖 <em>DyWA</em>: Dynamics-adaptive World Action Model for Generalizable Non-prehensile Manipulation</h1>
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -181,6 +181,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/SteveOUO"><img src="https://avatars.githubusercontent.com/u/112961458?v=4?s=100" width="100px;" alt="SteveOUO"/><br /><sub><b>SteveOUO</b></sub></a><br /><a href="https://github.com/jiangranlv/DyWA/commits?author=SteveOUO" title="Code">💻</a> <a href="https://github.com/jiangranlv/DyWA/commits?author=SteveOUO" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://jiangranlv.github.io"><img src="https://avatars.githubusercontent.com/u/66426987?v=4?s=100" width="100px;" alt="Jiangran Lyu"/><br /><sub><b>Jiangran Lyu</b></sub></a><br /><a href="https://github.com/jiangranlv/DyWA/commits?author=jiangranlv" title="Code">💻</a> <a href="https://github.com/jiangranlv/DyWA/commits?author=jiangranlv" title="Documentation">📖</a> <a href="#ideas-jiangranlv" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ZimingLi1204"><img src="https://avatars.githubusercontent.com/u/103662326?v=4?s=100" width="100px;" alt="ZimingLi1204"/><br /><sub><b>ZimingLi1204</b></sub></a><br /><a href="https://github.com/jiangranlv/DyWA/commits?author=ZimingLi1204" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
