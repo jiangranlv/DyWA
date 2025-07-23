@@ -4,6 +4,9 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+<p align="center">
+  <img src="fig/object.gif" alt="object gif" width="600"/>
+</p>
 
 
 <br>
