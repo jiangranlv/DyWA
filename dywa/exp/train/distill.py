@@ -42,26 +42,22 @@ class StudentAgentRMA(nn.Module):
     model list:
 
     Transformer: 
-        self.tokenizer: 对abs_goal, hand_state, robot_state, previous_action进行一层linear 
+        self.tokenizer: Linear layer for abs_goal, hand_state, robot_state, previous_action
         self.pos_embed: learnable positional embedding
         Vision:
             self.group: group point 
-            self.patch_encoder: vision encoder, 目前是pointnet
-        self.encoder: self attention的encoder, 输入各种维度的information
+            self.patch_encoder: vision encoder, currently is pointnet
+        self.encoder: self attention encoder, input various dimensions of information
 
     MLP_layers: 
-        self.aggregator: 聚合当前和历史memory信息
-        self.project: 最后一层linear
+        self.aggregator: Aggregate the current and historical memory information
+        self.project: The last linear layer
 
     Predict
         self.pre_pose
     '''
     @dataclass
     class StudentAgentRMAConfig(FeatureBase.Config):
-
-        '''
-        这个config非常巧妙, 直接在config中新添加内容, 就可以在命令行里面用++设置config
-        '''
 
         horizon: int = 1
         p_drop: float = 0.0

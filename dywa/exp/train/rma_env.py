@@ -25,7 +25,7 @@ from pytorch3d.ops import sample_farthest_points
 
 class CombineCloud(ObservationWrapper):
     '''
-    将多个partial cloud 合成1个
+    Combine multiple partial clouds into one
     called: init, partial = 0, reset/step
     '''
     @dataclass
