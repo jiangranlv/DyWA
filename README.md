@@ -9,21 +9,17 @@
 </p>
 
 
+<p align="center">
+  <a href="https://jiangranlv.github.io/">Jiangran Lyu</a><sup>1,2</sup>,
+  <a href="https://openreview.net/profile?id=~Ziming_Li2">Ziming Li</a><sup>1,2</sup>,
+  <a href="https://scholar.google.com/citations?user=wRBbtl8AAAAJ&hl=en">Xuesong Shi</a><sup>2</sup>,
+  <a href="https://co1one.github.io/">Chaoyi Xu</a><sup>2</sup>,
+  <a href="https://cfcs.pku.edu.cn/people/faculty/yizhouwang/index.htm">Yizhou Wang</a><sup>1</sup><sup>&dagger;</sup>,
+  <a href="https://hughw19.github.io/">He Wang</a><sup>1,2</sup><sup>&dagger;</sup>
 <br>
-  <a href="https://jiangranlv.github.io/">Jiangran Lyu</a>,
-  <a href="https://openreview.net/profile?id=~Ziming_Li2">Ziming Li</a>,
-  <a href="https://scholar.google.com/citations?user=wRBbtl8AAAAJ&hl=en">Xuesong Shi</a>,
-  <a href="https://co1one.github.io/">Chaoyi Xu</a>,
-  <a href="https://cfcs.pku.edu.cn/people/faculty/yizhouwang/index.htm">Yizhou Wang</a><sup>&dagger;</sup>,
-  <a href="https://hughw19.github.io/">He Wang</a><sup>&dagger;</sup>
-<br>
-<p>
-  <sup>†</sup> Corresponding Author
+<sup>1</sup>Peking University  <sup>2</sup>Galbot  
+<sup>†</sup> Corresponding Authors
 </p>
-
-
-1. CFCS, School of Computer Science, Peking University  
-2. Galbot
 
 Project website: [https://pku-epic.github.io/DyWA/](https://pku-epic.github.io/DyWA/)
 
@@ -45,7 +41,7 @@ Project website: [https://pku-epic.github.io/DyWA/](https://pku-epic.github.io/D
 
 ### Choice 1: Docker Setup
 
-Refer to the instructions in [docker](./docker)，For the PyTorch3D wheel built for CUDA 11.3 required by the DockerFile, do one of the following:
+Refer to the instructions in [docker](./docker), For the PyTorch3D wheel built for CUDA 11.3 required by the DockerFile, do one of the following:
   1. Clone the [PyTorch3D repository](https://github.com/facebookresearch/pytorch3d) directory and build the wheel yourself.
   ```bash
   git clone --branch v0.7.2 https://github.com/facebookresearch/pytorch3d.git
