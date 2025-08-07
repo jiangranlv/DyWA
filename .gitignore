@@ -308,13 +308,10 @@ events.*
 datasets
 docker/Downloads
 docker/*whl
-docker/run.sh
 isaacgym
 ckpts 
 output
 ~/corn/scripts/
-scripts
-!dywa/scripts
 
 # backup
 *.bak
